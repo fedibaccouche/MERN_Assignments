@@ -1,0 +1,36 @@
+.form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+
+}
+
+
+
+.btn{
+    width: 100px;
+    height:50px;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    border: 2px solid #dedede;
+    background-color: white;
+    margin:5px;
+}
+
+.input{
+    width: 500px;
+    height:50px;
+    border-radius: 10px;
+    background-color:#fffbfb ;
+    margin:5px;
+    font-size: 1.5rem;
+
+}
+
+.text{
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin:5px;
+
+}
