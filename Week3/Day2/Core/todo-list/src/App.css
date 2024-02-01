@@ -1,5 +1,84 @@
+
+.wrapper{
+  display: flex;
+  margin: 20px auto;
+  width: 50%;
+  align-items: center;
+}
+
+.check-box{
+  margin: 10px 10px;
+  font-size: 1.2rem;
+  border-radius: 2px;
+  border:none;
+  accent-color: gray;
+  width: 20px;
+  height: 20px;
+  
+
+}
+
+.delete-btn{
+
+  margin: 10px 10px;
+  font-size: 1.2rem;
+  border-radius: 5px;
+  border:none;
+  background-color: black;
+  color: white;
+  height:50px;
+  width: 150px;
+
+
+}
+.container{
+  display: flex;
+  flex-direction: column;
+  margin: 20px auto;
+  width: 50%;
+}
+
+
+.input-text{
+  height:50px;
+  width: 300px;
+  background-color:#f2f1f1;
+  color:black;
+  border-radius: 10px;
+  border:none;
+  margin: 10px 20px;
+  font-size: 1.2rem;
+
+}
+
+.button{
+
+  margin: 10px 20px;
+  border-radius: 10px;
+  border:none;
+  width: 120px;
+  height: 75px;
+  background-color: blue;
+  color:white;
+  cursor: pointer;
+  font-size: 1.2rem;
+
+
+}
+.task{
+  font-size: 1.2rem;
+  margin: 10px 10px;
+}
+.barred{
+  text-decoration: line-through;
+}
+
+
+
+
 .App {
   text-align: center;
+  margin: 10px;
 }
 
 .App-logo {
