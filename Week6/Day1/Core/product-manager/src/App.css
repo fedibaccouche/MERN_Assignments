@@ -1,3 +1,11 @@
+.oneProduct{
+  width: 50%;
+  margin: 5% auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 .label{
   
   margin: 10 px;

@@ -3,11 +3,12 @@ import { useState } from 'react';
 import axios from 'axios';
 
 
-const FormProduct = () => {
+const FormProduct = (props) => {
     //keep track of what is being typed via useState hook
     const [title, settitle] = useState(""); 
     const [price, setprice] = useState(0);
     const [description, setDesciption] = useState(""); 
+    const{products,setProducts}=props;
     
 
     //handler when the form is submitted
@@ -23,6 +24,7 @@ const FormProduct = () => {
             .then(res=>{
                 console.log(res); 
                 console.log(res.data);
+                props.setProducts([...props.products,res.data.Product])
             })
             .catch(err=>console.log(err))
     }
