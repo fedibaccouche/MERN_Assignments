@@ -4,10 +4,18 @@ import ListProducts from '../Components/ListProducts'
 
 const ProductView = () => {
     const[products,setProducts]=useState([])
+
+    const deleteFromDom=(id)=>{
+        setProducts(products.filter((product,index)=>{
+            return (product._id!=id)
+        })
+        )
+
+    }
   return (
     <div>
         <FormProduct products={products} setProducts={setProducts}/>
-        <ListProducts products={products} setProducts={setProducts}/>
+        <ListProducts products={products} deleteFromDom={deleteFromDom} setProducts={setProducts}/>
 
     </div>
   )

@@ -8,7 +8,7 @@ const FormProduct = (props) => {
     const [title, settitle] = useState(""); 
     const [price, setprice] = useState(0);
     const [description, setDesciption] = useState(""); 
-    const{products,setProducts}=props;
+    const{products,setProducts}=props
     
 
     //handler when the form is submitted
@@ -24,7 +24,7 @@ const FormProduct = (props) => {
             .then(res=>{
                 console.log(res); 
                 console.log(res.data);
-                props.setProducts([...props.products,res.data.Product])
+                props.setProducts([...props.products,res.data])
             })
             .catch(err=>console.log(err))
     }
