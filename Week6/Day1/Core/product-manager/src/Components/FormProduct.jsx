@@ -23,8 +23,10 @@ const FormProduct = (props) => {
         })
             .then(res=>{
                 console.log(res); 
+                console.log("here is res.data")
                 console.log(res.data);
-                props.setProducts([...props.products,res.data])
+                console.log("here is res.data")
+                props.setProducts([...props.products,res.data.Product])
             })
             .catch(err=>console.log(err))
     }

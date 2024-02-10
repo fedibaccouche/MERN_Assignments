@@ -40,7 +40,7 @@ module.exports.createNewProduct = (req, res) => {
             res.json({ Product: newlyCreatedProduct })
         })
         .catch((err) => {
-            res.json({ message: 'Something went wrong', error: err })
+            res.status(400).json({ message: 'Something went wrong', error: err })
         });}
  
 module.exports.updateExistingProduct = (req, res) => {
