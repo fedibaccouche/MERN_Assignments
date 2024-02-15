@@ -39,7 +39,7 @@ const UpdateProduct = () => {
         })
             .then(res => {
                 console.log(res);
-                navigate("/home"); // this will take us back to the Main.js
+                navigate("/"); // this will take us back to the Main.js
             })
             .catch(err => console.log(err))
 

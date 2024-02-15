@@ -6,9 +6,9 @@ import axios from 'axios';
 const FormProduct = (props) => {
     //keep track of what is being typed via useState hook
     const [title, settitle] = useState(""); 
-    const [price, setprice] = useState(0);
+    const [price, setprice] = useState();
     const [description, setDesciption] = useState(""); 
-    const{products,setProducts}=props
+    const[errors,setErrors]=useState([])
     
 
     //handler when the form is submitted
@@ -16,6 +16,7 @@ const FormProduct = (props) => {
         //prevent default behavior of the submit
         e.preventDefault();
         //make a post request to create a new person
+        console.log(price)
         axios.post('http://localhost:8000/api/products', {
             title,    
             price,
@@ -27,8 +28,14 @@ const FormProduct = (props) => {
                 console.log(res.data);
                 console.log("here is res.data")
                 props.setProducts([...props.products,res.data.Product])
+                settitle("")
+                setprice(0)
+                setDesciption("")
             })
-            .catch(err=>console.log(err))
+            .catch(err=>{
+                console.log(err.response.data.error);
+                setErrors(err.response.data.error.errors);
+            })
     }
     
     return (
@@ -39,17 +46,25 @@ const FormProduct = (props) => {
                 {/* When the user types in this input, our onChange synthetic event 
                     runs this arrow function, setting that event's target's (input) 
                     value (what's typed into the input) to our updated state   */}
-                <input type="text"  onChange = {(e)=>settitle(e.target.value)}/>
+                <input type="text" value={title}  onChange = {(e)=>settitle(e.target.value)}/>
             </div>
+            { errors.title ? 
+                        <div style={{color:"red"}}>{errors.title.message}</div>
+                        : null
+                    }
             <div className='input'>
                 <label  >Price :</label>
     
-                <input type="number" onChange = {(e)=>setprice(e.target.value)}/>
+                <input type="number" value={price} onChange = {(e)=>setprice(e.target.value)}/>
             </div>
+            { errors.price ? 
+                        <div style={{color:"red"}}>{errors.price.message}</div>
+                        : null
+                    }
             <div className='input'>
                 <label  >Description : </label>
 
-                <input type="text"  onChange = {(e)=>setDesciption(e.target.value)}/>
+                <input type="text" value={description} onChange = {(e)=>setDesciption(e.target.value)}/>
             </div>
             <div>
             <button className='btn btn-secondary' style={{
